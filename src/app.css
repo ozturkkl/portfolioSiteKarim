@@ -1,0 +1,204 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-display: 'Perandory', 'Cormorant Garamond', Georgia, serif;
+	--font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+
+	--color-cream: #f7f3ee;
+	--color-cream-dark: #ebe4da;
+	--color-ink: #1c1917;
+	--color-ink-muted: #57534e;
+	--color-accent: #8b7355;
+}
+
+@layer base {
+	:root {
+		--radius: 0.125rem;
+	}
+
+	html {
+		overflow-x: clip;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-cream font-serif text-lg text-ink antialiased;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply font-serif font-light tracking-wide;
+	}
+}
+
+@layer utilities {
+	.section-padding {
+		@apply px-6 py-20 md:px-12 md:py-28 lg:px-20;
+	}
+
+	.container-narrow {
+		@apply mx-auto max-w-5xl;
+	}
+
+	.container-wide {
+		@apply mx-auto max-w-7xl;
+	}
+
+	.page-section {
+		@apply px-6 pb-20 pt-28 md:px-12 md:pb-28 md:pt-36 lg:px-20;
+	}
+
+	.section-surface {
+		@apply bg-cream-dark/20;
+	}
+
+	.rounded-site {
+		border-radius: var(--radius);
+	}
+}
+
+@layer components {
+	/* Typography */
+	.eyebrow {
+		@apply text-sm font-semibold tracking-[0.35em] text-accent uppercase;
+	}
+
+	.heading-hero {
+		@apply font-display text-white uppercase;
+	}
+
+	.heading-page {
+		@apply font-serif text-5xl font-light tracking-wide text-ink md:text-6xl lg:text-7xl;
+	}
+
+	.heading-section {
+		@apply font-serif text-4xl font-light tracking-wide text-ink md:text-5xl lg:text-6xl;
+	}
+
+	.heading-card {
+		@apply font-serif text-4xl font-light tracking-wide text-ink;
+	}
+
+	.heading-quote {
+		@apply font-serif text-3xl font-light leading-relaxed tracking-wide text-ink md:text-4xl;
+	}
+
+	.text-lead {
+		@apply max-w-prose text-xl leading-snug text-ink md:text-2xl;
+	}
+
+	.text-body {
+		@apply text-lg leading-snug text-ink md:text-xl;
+	}
+
+	.text-body-muted {
+		@apply text-lg leading-relaxed text-ink-muted md:text-xl;
+	}
+
+	.text-caption {
+		@apply text-sm font-semibold tracking-[0.2em] text-ink-muted uppercase;
+	}
+
+	.text-nav {
+		@apply text-base leading-none font-semibold tracking-[0.15em] uppercase transition-colors lg:text-lg lg:tracking-[0.18em];
+	}
+
+	.text-nav-mobile {
+		@apply text-lg font-semibold tracking-[0.2em] uppercase transition-colors;
+	}
+
+	.nav-link {
+		@apply inline-flex px-2 py-3 leading-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:px-3;
+	}
+
+	.nav-link-mobile {
+		@apply inline-flex min-h-11 items-center px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+	}
+
+	.text-contact {
+		@apply mt-2 block font-serif text-3xl text-ink transition-colors hover:text-accent;
+	}
+
+	.text-price {
+		@apply font-serif text-5xl text-accent;
+	}
+
+	.text-overlay {
+		@apply text-sm font-semibold tracking-[0.2em] text-white uppercase;
+	}
+
+	/* Links */
+	.link {
+		@apply text-ink transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+	}
+
+	.link-accent {
+		@apply text-accent underline-offset-4 transition-colors hover:text-ink hover:underline;
+	}
+
+	/* Media */
+	.photo-frame {
+		@apply overflow-hidden;
+		border-radius: var(--radius);
+	}
+
+	/* Buttons */
+	.btn-primary,
+	.btn-outline,
+	.btn-text {
+		border-radius: var(--radius);
+	}
+
+	.btn-primary,
+	.btn-outline {
+		@apply inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold tracking-[0.2em] uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+	}
+
+	.btn-block {
+		@apply w-full;
+	}
+
+	.btn-primary {
+		@apply bg-ink text-cream hover:bg-accent;
+	}
+
+	.btn-outline {
+		@apply border border-ink text-ink hover:bg-ink hover:text-cream;
+	}
+
+	.btn-text {
+		@apply inline-flex items-center justify-center bg-transparent px-8 py-3.5 text-base font-semibold tracking-[0.2em] text-ink uppercase focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+		transition: background-color 150ms ease-out;
+	}
+
+	.btn-text:hover {
+		background-color: var(--color-cream-dark);
+	}
+
+	/* Forms */
+	.label {
+		@apply mb-2 block text-sm font-semibold tracking-[0.2em] text-ink-muted uppercase;
+	}
+
+	.input {
+		@apply w-full border border-cream-dark bg-white px-4 py-3 text-ink outline-none transition-colors focus:border-accent;
+		border-radius: var(--radius);
+	}
+
+	/* Filters & tabs */
+	.filter-tab-active,
+	.filter-tab-inactive {
+		@apply px-5 py-2.5 text-sm font-semibold tracking-[0.2em] uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+		border-radius: var(--radius);
+	}
+
+	.filter-tab-active {
+		@apply bg-ink text-cream;
+	}
+
+	.filter-tab-inactive {
+		@apply text-ink-muted hover:text-ink;
+	}
+}
