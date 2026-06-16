@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import IconEmail from '$lib/components/ui/IconEmail.svelte';
+	import IconInstagram from '$lib/components/ui/IconInstagram.svelte';
 	import { navLinks, site } from '$lib/data/site';
 </script>
 
@@ -36,36 +38,13 @@
 				<span class="text-base text-ink-muted transition-colors group-hover:text-accent lg:text-right">
 					{site.contact.instagram}
 				</span>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6 shrink-0"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
-					aria-hidden="true"
-				>
-					<rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-					<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-					<line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-				</svg>
+				<IconInstagram />
 			</a>
 			<a href="mailto:{site.contact.email}" class="group link flex items-center gap-3 lg:justify-end">
 				<span class="text-base text-ink-muted transition-colors group-hover:text-accent lg:text-right">
 					{site.contact.email}
 				</span>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6 shrink-0"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
-					aria-hidden="true"
-				>
-					<rect x="2" y="4" width="20" height="16" rx="2" />
-					<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-				</svg>
+				<IconEmail />
 			</a>
 		</div>
 	</div>

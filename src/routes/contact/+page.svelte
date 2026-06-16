@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SectionHeading from '$lib/components/ui/SectionHeading.svelte';
+	import { media } from '$lib/data/media';
 	import { site } from '$lib/data/site';
 
 	let name = $state('');
@@ -94,8 +95,10 @@
 
 					<div class="photo-frame">
 						<img
-							src={site.contact.image.src}
-							alt={site.contact.image.alt}
+							src={media.contact.src}
+							alt={media.contact.alt}
+							width={media.contact.width}
+							height={media.contact.height}
 							class="aspect-video w-full object-cover"
 							loading="lazy"
 						/>

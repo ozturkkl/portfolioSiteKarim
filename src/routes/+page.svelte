@@ -2,14 +2,9 @@
 	import HeroLanding from '$lib/components/HeroLanding.svelte';
 	import HomeAbout from '$lib/components/HomeAbout.svelte';
 	import HomeAlbum from '$lib/components/HomeAlbum.svelte';
-	import { galleryImages } from '$lib/data/gallery';
-	import { site } from '$lib/data/site';
+	import { media } from '$lib/data/media';
 </script>
 
-<svelte:head>
-	<title>{site.name}</title>
-</svelte:head>
-
-<HeroLanding />
-<HomeAbout />
-<HomeAlbum images={galleryImages} />
+<HeroLanding media={media.hero} />
+<HomeAbout portrait={media.homeAbout} />
+<HomeAlbum media={media.homeGrid} />

@@ -2,10 +2,8 @@ export const site = {
 	name: 'Ilayda Turkmen',
 	brandName: 'ilayda turkmen',
 	tagline: 'Moments captured with sincerity',
-	heroHeadline: 'Your story captured with passion',
 	hero: {
-		image:
-			'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80&auto=format&fit=crop'
+		headline: 'Your story captured with passion'
 	},
 	about: {
 		greeting: 'Hello, I am Ilayda',
@@ -19,18 +17,12 @@ export const site = {
 			eyebrow: 'Philosophy',
 			quote:
 				'Photography is the art of freezing time — not to hold it still, but to remind us how beautifully fleeting every moment truly is.'
-		},
-		portrait:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&auto=format&fit=crop'
+		}
 	},
 	contact: {
 		email: 'hello@ilaydaturkmen.com',
 		instagram: '@ilaydaturkmen',
-		instagramUrl: 'https://instagram.com/ilaydaturkmen',
-		image: {
-			src: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&q=80&auto=format&fit=crop',
-			alt: 'Camera and notebook on a desk'
-		}
+		instagramUrl: 'https://instagram.com/ilaydaturkmen'
 	},
 	footer: {
 		note: "Hi there — thanks for stopping by. I'm so glad you're here, and I'd love to hear from you anytime."

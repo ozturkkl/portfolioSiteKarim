@@ -1,0 +1,19 @@
+<script lang="ts">
+	import GalleryGrid from '$lib/components/GalleryGrid.svelte';
+	import PhotoSlider from '$lib/components/PhotoSlider.svelte';
+	import type { CoupleSection } from '$lib/types/media';
+
+	let { couple }: { couple: CoupleSection } = $props();
+</script>
+
+<section class="mb-20 last:mb-0">
+	<h2 class="heading-section mb-8 text-center">{couple.label}</h2>
+
+	{#if couple.slider?.length}
+		<PhotoSlider media={couple.slider} class="mb-10" />
+	{/if}
+
+	{#if couple.media.length > 0}
+		<GalleryGrid media={couple.media} lightbox showCategory={false} />
+	{/if}
+</section>

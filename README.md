@@ -1,49 +1,32 @@
-# Ilayda Turkmen — Photography Portfolio
+# Ilayda Turkmen — Photography
 
-A minimal photography portfolio built with **SvelteKit**, **Svelte 5**, and **Tailwind CSS v4**.
-
-Inspired by fine-art photography sites — full-bleed imagery, elegant typography, and a focus on storytelling.
-
-## Getting started
+SvelteKit portfolio. Live at [ilaydaturkmen.com](https://ilaydaturkmen.com).
 
 ```bash
 npm install
+cp .env.example .env   # NEXTCLOUD_HOST + NEXTCLOUD_SHARE_TOKEN
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+## Scripts
 
-## Pages
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Dev server |
+| `npm run build` | Static build → `build/` |
+| `npm run check` | Typecheck |
+| `npm run sync:photos` | Pull from Nextcloud → `static/images/` + `media.json` |
 
-| Route | Description |
-|-------|-------------|
-| `/` | Home — B&W hero, about intro, masonry album preview |
-| `/portfolio` | Full gallery with category filters |
-| `/about` | About the photographer |
-| `/pricing` | Session packages & investment |
-| `/contact` | Contact form (UI only for now) |
+## Customize
 
-The home page is the primary focus; inner pages are functional scaffolds to refine later.
+- `src/lib/data/site.ts` — copy, nav, contact
+- `src/lib/data/pricing.ts` — packages
+- Nextcloud folders — see `AGENTS.md`; run `sync:photos` after changes
 
-## Customization
+## Deploy
 
-Edit the data files in `src/lib/data/`:
+GitHub Pages via `.github/workflows/deploy-pages.yml` on push to `main`. Custom domain: `static/CNAME`.
 
-- `site.ts` — brand, hero, about copy, contact details, footer note
-- `gallery.ts` — portfolio images
-- `pricing.ts` — packages and pricing
+Photo sync CI needs secrets `NEXTCLOUD_HOST` and `NEXTCLOUD_SHARE_TOKEN`.
 
-Placeholder images are from [Unsplash](https://unsplash.com). Replace with your own photos when ready.
-
-## Build & deploy
-
-```bash
-npm run build
-npm run preview
-```
-
-The site is fully static and can be deployed to Netlify, Vercel, Cloudflare Pages, or any static host.
-
-## For AI agents
-
-See [AGENTS.md](./AGENTS.md) for project context and conventions.
+See [AGENTS.md](./AGENTS.md) for agent context.

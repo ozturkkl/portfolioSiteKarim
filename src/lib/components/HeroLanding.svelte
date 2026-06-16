@@ -1,11 +1,16 @@
 <script lang="ts">
+	import type { MediaAsset } from '$lib/types/media';
 	import { site } from '$lib/data/site';
+
+	let { media }: { media: MediaAsset } = $props();
 </script>
 
 <section id="hero" class="relative h-svh w-full overflow-hidden bg-black" aria-label="Landing">
 	<img
-		src={site.hero.image}
-		alt=""
+		src={media.src}
+		alt={media.alt}
+		width={media.width}
+		height={media.height}
 		class="hero-image absolute inset-0 h-full w-full object-cover"
 		loading="eager"
 		fetchpriority="high"
@@ -13,7 +18,7 @@
 	<div class="absolute inset-0 bg-black/20"></div>
 
 	<h1 class="hero-headline heading-hero absolute inset-0 flex items-center justify-center px-5 text-center sm:px-8">
-		{site.heroHeadline}
+		{site.hero.headline}
 	</h1>
 </section>
 

@@ -24,7 +24,7 @@
 			{/each}
 		</div>
 
-		<div class="container-narrow mt-16 text-center">
+		<div class="mx-auto mt-16 max-w-3xl text-center">
 			<p class="text-body-muted">
 				Custom packages available for weddings, elopements, and commercial work.
 				<a href={resolve('/contact')} class="link-accent">Get in touch</a>

@@ -17,6 +17,19 @@
 		return $page.url.pathname === href;
 	}
 
+	function navLinkClass(href: string) {
+		const active = isActive(href);
+		if (useLightHeader) {
+			return active ? 'text-white' : 'text-white/85 hover:text-white';
+		}
+		return active ? 'text-accent' : 'text-ink-muted hover:text-accent';
+	}
+
+	$effect(() => {
+		$page.url.pathname;
+		menuOpen = false;
+	});
+
 	$effect(() => {
 		if (!isHome) {
 			heroVisible = false;
@@ -65,16 +78,7 @@
 				{#each navLinks as link (link.href)}
 					<a
 						href={resolve(link.href)}
-						class={[
-							'nav-link text-nav',
-							useLightHeader
-								? isActive(link.href)
-									? 'text-white'
-									: 'text-white/85 hover:text-white'
-								: isActive(link.href)
-									? 'text-accent'
-									: 'text-ink-muted hover:text-accent'
-						]}
+						class={['nav-link text-nav', navLinkClass(link.href)]}
 					>
 						{link.label}
 					</a>
@@ -129,16 +133,7 @@
 					<li>
 						<a
 							href={resolve(link.href)}
-							class={[
-								'nav-link-mobile text-nav-mobile',
-								useLightHeader
-									? isActive(link.href)
-										? 'text-white'
-										: 'text-white/85 hover:text-white'
-									: isActive(link.href)
-										? 'text-accent'
-										: 'text-ink-muted hover:text-accent'
-							]}
+							class={['nav-link-mobile text-nav-mobile', navLinkClass(link.href)]}
 							onclick={closeMenu}
 						>
 							{link.label}

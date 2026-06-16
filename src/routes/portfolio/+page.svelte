@@ -1,16 +1,24 @@
 <script lang="ts">
+	import CoupleSection from '$lib/components/CoupleSection.svelte';
 	import GalleryGrid from '$lib/components/GalleryGrid.svelte';
 	import SectionHeading from '$lib/components/ui/SectionHeading.svelte';
-	import { galleryCategories, galleryImages, type GalleryImage } from '$lib/data/gallery';
+	import { media } from '$lib/data/media';
 	import { site } from '$lib/data/site';
 
 	let activeCategory = $state<string>('all');
 
-	const filteredImages = $derived<GalleryImage[]>(
-		activeCategory === 'all'
-			? galleryImages
-			: galleryImages.filter((img) => img.category === activeCategory)
+	const nonCoupleCategories = $derived(
+		media.portfolio.categories.filter((category) => category.id !== 'couples')
 	);
+
+	const filteredGalleryMedia = $derived(
+		activeCategory === 'all'
+			? media.portfolio.media
+			: media.portfolio.media.filter((item) => item.category === activeCategory)
+	);
+
+	const showCouples = $derived(activeCategory === 'all' || activeCategory === 'couples');
+	const showGallery = $derived(activeCategory === 'all' || activeCategory !== 'couples');
 </script>
 
 <svelte:head>
@@ -26,7 +34,16 @@
 		/>
 
 		<div class="mb-12 flex flex-wrap justify-center gap-4" role="tablist" aria-label="Filter gallery">
-			{#each galleryCategories as category (category.id)}
+			<button
+				type="button"
+				role="tab"
+				class={activeCategory === 'all' ? 'filter-tab-active' : 'filter-tab-inactive'}
+				aria-selected={activeCategory === 'all'}
+				onclick={() => (activeCategory = 'all')}
+			>
+				All
+			</button>
+			{#each media.portfolio.categories as category (category.id)}
 				<button
 					type="button"
 					role="tab"
@@ -39,6 +56,28 @@
 			{/each}
 		</div>
 
-		<GalleryGrid images={filteredImages} />
+		{#if showCouples}
+			{#each media.portfolio.couples as couple (couple.id)}
+				<CoupleSection {couple} />
+			{/each}
+		{/if}
+
+		{#if showGallery}
+			{#if activeCategory === 'all'}
+				{#each nonCoupleCategories as category (category.id)}
+					{@const categoryMedia = media.portfolio.media.filter(
+						(item) => item.category === category.id
+					)}
+					{#if categoryMedia.length > 0}
+						<section class="mb-20">
+							<h2 class="heading-section mb-8 text-center">{category.label}</h2>
+							<GalleryGrid media={categoryMedia} lightbox showCategory={false} />
+						</section>
+					{/if}
+				{/each}
+			{:else}
+				<GalleryGrid media={filteredGalleryMedia} lightbox />
+			{/if}
+		{/if}
 	</div>
 </section>

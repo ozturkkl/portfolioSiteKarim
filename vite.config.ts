@@ -7,13 +7,13 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		sveltekit({
+			adapter: adapter({
+				fallback: undefined
+			}),
 			compilerOptions: {
 				runes: ({ filename }) =>
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
-			},
-			adapter: adapter({
-				fallback: undefined
-			})
+			}
 		})
 	]
 });

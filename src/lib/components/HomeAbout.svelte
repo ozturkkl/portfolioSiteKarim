@@ -1,5 +1,8 @@
 <script lang="ts">
+	import type { MediaAsset } from '$lib/types/media';
 	import { site } from '$lib/data/site';
+
+	let { portrait }: { portrait: MediaAsset } = $props();
 </script>
 
 <section class="bg-cream section-padding">
@@ -8,8 +11,10 @@
 			class="grid items-center gap-10 md:grid-cols-[auto_1fr] md:gap-12 lg:gap-16"
 		>
 			<img
-				src={site.about.portrait}
-				alt="Portrait of Ilayda"
+				src={portrait.src}
+				alt={portrait.alt}
+				width={portrait.width}
+				height={portrait.height}
 				class="mx-auto size-48 shrink-0 rounded-full object-cover sm:size-52 md:mx-0 md:size-56 lg:size-64 xl:size-72"
 				loading="lazy"
 			/>
