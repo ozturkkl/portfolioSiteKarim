@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Lightbox from '$lib/components/Lightbox.svelte';
 	import MediaThumb from '$lib/components/MediaThumb.svelte';
+	import SwipeCarousel from '$lib/components/SwipeCarousel.svelte';
 	import type { MediaAsset } from '$lib/types/media';
 	import { isVideo } from '$lib/types/media';
 
@@ -14,15 +15,16 @@
 
 	let index = $state(0);
 	let activeAsset = $state<MediaAsset | null>(null);
+	let carousel = $state<SwipeCarousel | null>(null);
 
 	const current = $derived(assets[index] ?? assets[0]);
 
 	function prev() {
-		index = (index - 1 + assets.length) % assets.length;
+		carousel?.goPrev();
 	}
 
 	function next() {
-		index = (index + 1) % assets.length;
+		carousel?.goNext();
 	}
 
 	function openLightbox() {
@@ -32,27 +34,76 @@
 	function viewLabel(asset: MediaAsset): string {
 		return isVideo(asset) ? `Play video: ${asset.alt}` : `View full size: ${asset.alt}`;
 	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (assets.length <= 1) return;
+
+		if (event.key === 'ArrowLeft') {
+			event.preventDefault();
+			prev();
+		} else if (event.key === 'ArrowRight') {
+			event.preventDefault();
+			next();
+		} else if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault();
+			openLightbox();
+		}
+	}
 </script>
 
+{#snippet slide(assetIndex: number)}
+	{@const asset = assets[assetIndex]}
+	<div
+		class={[
+			'flex h-full w-full items-center justify-center',
+			isVideo(asset) ? 'cursor-pointer' : 'cursor-zoom-in'
+		]}
+	>
+		<MediaThumb asset={asset} fit="contain" class="h-full w-full" />
+	</div>
+{/snippet}
+
 {#if assets.length > 0}
-	<div class={['relative', className]}>
+	<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+	<div
+		class={[
+			'relative rounded-site focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
+			className
+		]}
+		role={assets.length > 1 ? 'group' : undefined}
+		aria-label={assets.length > 1 ? `Photo slider, slide ${index + 1} of ${assets.length}` : undefined}
+		tabindex={assets.length > 1 ? 0 : undefined}
+		onkeydown={assets.length > 1 ? handleKeydown : undefined}
+	>
 		<div class="photo-frame aspect-3/2 overflow-hidden bg-cream-dark">
-			<button
-				type="button"
-				class={[
-					'flex h-full w-full items-center justify-center',
-					isVideo(current) ? 'cursor-pointer' : 'cursor-zoom-in'
-				]}
-				onclick={openLightbox}
-				aria-label={viewLabel(current)}
-			>
-				<MediaThumb asset={current} fit="contain" class="h-full w-full" />
-			</button>
+			{#if assets.length > 1}
+				<SwipeCarousel
+					bind:this={carousel}
+					count={assets.length}
+					bind:index
+					{slide}
+					ontap={openLightbox}
+					class="h-full"
+				/>
+			{:else}
+				<button
+					type="button"
+					class={[
+						'flex h-full w-full items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
+						isVideo(current) ? 'cursor-pointer' : 'cursor-zoom-in'
+					]}
+					onclick={openLightbox}
+					aria-label={viewLabel(current)}
+				>
+					<MediaThumb asset={current} fit="contain" class="h-full w-full" />
+				</button>
+			{/if}
 		</div>
 
 		{#if assets.length > 1}
 			<button
 				type="button"
+				tabindex={-1}
 				class="absolute top-1/2 left-3 z-10 -translate-y-1/2 rounded-site bg-black/40 px-2 py-3 text-2xl leading-none text-white transition-colors hover:bg-black/60"
 				aria-label="Previous slide"
 				onclick={(event) => {
@@ -64,6 +115,7 @@
 			</button>
 			<button
 				type="button"
+				tabindex={-1}
 				class="absolute top-1/2 right-3 z-10 -translate-y-1/2 rounded-site bg-black/40 px-2 py-3 text-2xl leading-none text-white transition-colors hover:bg-black/60"
 				aria-label="Next slide"
 				onclick={(event) => {
