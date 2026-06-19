@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   sync:
@@ -48,7 +49,21 @@ jobs:
           NEXTCLOUD_SHARE_TOKEN: ${{ secrets.NEXTCLOUD_SHARE_TOKEN }}
 
       - name: Commit updated assets
+        id: auto_commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore: sync photos from Nextcloud'
           file_pattern: 'static/images/ src/lib/data/media.json'
+
+      # GITHUB_TOKEN pushes do not trigger push workflows; dispatch deploy explicitly.
+      - name: Trigger deploy
+        if: steps.auto_commit.outputs.changes_detected == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy-pages.yml',
+              ref: 'main'
+            })
