@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Button from '$lib/components/ui/Button.svelte';
 	import GalleryGrid from '$lib/components/GalleryGrid.svelte';
 	import type { MediaAsset } from '$lib/types/media';
 
-	let { media }: { media: MediaAsset[] } = $props();
+	let { assets }: { assets: MediaAsset[] } = $props();
 </script>
 
 <section class="bg-cream px-6 sm:px-8">
-	<GalleryGrid {media} showCategory={false} lightbox />
+	<GalleryGrid {assets} showCategory={false} lightbox />
 
 	<div class="py-12 text-center">
-		<a href={resolve('/portfolio')} class="btn-text">View portfolio</a>
+		<Button href={resolve('/portfolio')} variant="ghost">View portfolio</Button>
 	</div>
 </section>

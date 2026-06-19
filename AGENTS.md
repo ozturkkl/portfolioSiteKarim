@@ -24,7 +24,7 @@ npm run dev | build | preview | check | sync:photos
 ### Nextcloud layout
 
 ```
-0-HOME/     HERO.JPG, ABOUT.JPG (about + homeAbout), PORTFOLIO.JPG (contact), GRID/
+0-HOME/     HERO.JPG, ABOUT.JPG, HOME_ABOUT.JPG, CONTACT.JPG, GRID/
 1-PORTFOLIO/   → contentPaths.portfolio
   0-COUPLES/   numbered subfolders; optional SLIDER/ per couple
   1-STREET/  2-LIFE/  3-SELF_PORTRAIT/

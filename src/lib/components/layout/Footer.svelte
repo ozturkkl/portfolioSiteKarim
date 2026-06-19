@@ -5,7 +5,7 @@
 	import { navLinks, site } from '$lib/data/site';
 </script>
 
-<footer class="border-t border-cream-dark bg-cream-dark/30 px-6 py-12 sm:px-8 md:py-14 lg:px-16">
+<footer class="site-gutter border-t border-cream-dark bg-cream-dark/30 py-12 md:py-14">
 	<div
 		class="flex w-full flex-col items-center gap-8 text-center lg:flex-row lg:items-center lg:justify-between lg:text-left"
 	>

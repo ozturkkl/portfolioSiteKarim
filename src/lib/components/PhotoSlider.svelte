@@ -5,24 +5,24 @@
 	import { isVideo } from '$lib/types/media';
 
 	let {
-		media,
+		assets,
 		class: className = ''
 	}: {
-		media: MediaAsset[];
+		assets: MediaAsset[];
 		class?: string;
 	} = $props();
 
 	let index = $state(0);
 	let activeAsset = $state<MediaAsset | null>(null);
 
-	const current = $derived(media[index] ?? media[0]);
+	const current = $derived(assets[index] ?? assets[0]);
 
 	function prev() {
-		index = (index - 1 + media.length) % media.length;
+		index = (index - 1 + assets.length) % assets.length;
 	}
 
 	function next() {
-		index = (index + 1) % media.length;
+		index = (index + 1) % assets.length;
 	}
 
 	function openLightbox() {
@@ -34,7 +34,7 @@
 	}
 </script>
 
-{#if media.length > 0}
+{#if assets.length > 0}
 	<div class={['relative', className]}>
 		<div class="photo-frame aspect-3/2 overflow-hidden">
 			<button
@@ -47,7 +47,7 @@
 			</button>
 		</div>
 
-		{#if media.length > 1}
+		{#if assets.length > 1}
 			<button
 				type="button"
 				class="absolute top-1/2 left-3 z-10 -translate-y-1/2 rounded-site bg-black/40 px-2 py-3 text-2xl leading-none text-white transition-colors hover:bg-black/60"
@@ -71,7 +71,7 @@
 				›
 			</button>
 			<p class="text-caption mt-3 text-center text-ink-muted">
-				{index + 1} / {media.length}
+				{index + 1} / {assets.length}
 			</p>
 		{/if}
 	</div>

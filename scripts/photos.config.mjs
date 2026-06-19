@@ -25,8 +25,8 @@ export const contentPaths = {
 	homeGrid: '0-HOME/GRID',
 	hero: '0-HOME/HERO.JPG',
 	about: '0-HOME/ABOUT.JPG',
-	homeAbout: '0-HOME/ABOUT.JPG',
-	contact: '0-HOME/PORTFOLIO.JPG'
+	homeAbout: '0-HOME/HOME_ABOUT.JPG',
+	contact: '0-HOME/CONTACT.JPG'
 };
 
 /** Max output width in px when optimizing JPEGs */

@@ -3,15 +3,15 @@
 	import { site } from '$lib/data/site';
 	import { staticSrc } from '$lib/utils/static-src';
 
-	let { media }: { media: MediaAsset } = $props();
+	let { asset }: { asset: MediaAsset } = $props();
 </script>
 
 <section id="hero" class="relative h-svh w-full overflow-hidden bg-black" aria-label="Landing">
 	<img
-		src={staticSrc(media.src)}
-		alt={media.alt}
-		width={media.width}
-		height={media.height}
+		src={staticSrc(asset.src)}
+		alt={asset.alt}
+		width={asset.width}
+		height={asset.height}
 		class="hero-image absolute inset-0 h-full w-full object-cover"
 		loading="eager"
 		fetchpriority="high"
@@ -19,7 +19,7 @@
 	<div class="absolute inset-0 bg-black/20"></div>
 
 	<h1 class="hero-headline heading-hero absolute inset-0 flex items-center justify-center px-5 text-center sm:px-8">
-		{site.hero.headline}
+		{site.headline}
 	</h1>
 </section>
 

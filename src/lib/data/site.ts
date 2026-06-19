@@ -1,10 +1,7 @@
 export const site = {
 	name: 'Ilayda Turkmen',
 	brandName: 'ilayda turkmen',
-	tagline: 'Moments captured with sincerity',
-	hero: {
-		headline: 'Your story captured with passion'
-	},
+	headline: 'Your story captured with passion',
 	about: {
 		greeting: 'Hello, I am Ilayda',
 		intro:
@@ -35,3 +32,7 @@ export const navLinks = [
 	{ href: '/pricing', label: 'Pricing' },
 	{ href: '/contact', label: 'Contact' }
 ] as const;
+
+export function pageTitle(page: string): string {
+	return `${page} — ${site.name}`;
+}

@@ -46,12 +46,12 @@
 		@apply mx-auto max-w-7xl;
 	}
 
-	.page-section {
-		@apply px-6 pb-20 pt-28 md:px-12 md:pb-28 md:pt-36 lg:px-20;
+	.site-gutter {
+		@apply px-6 md:px-12 lg:px-20;
 	}
 
-	.section-surface {
-		@apply bg-cream-dark/20;
+	.page-section {
+		@apply pb-20 pt-28 md:pb-28 md:pt-36;
 	}
 
 	.rounded-site {
@@ -145,36 +145,55 @@
 	}
 
 	/* Buttons */
-	.btn-primary,
-	.btn-outline,
-	.btn-text {
+	.btn-ghost,
+	.btn-solid,
+	.btn-tab-active,
+	.btn-tab-inactive {
 		border-radius: var(--radius);
+		@apply inline-flex cursor-pointer items-center justify-center font-semibold tracking-[0.2em] uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
 	}
 
-	.btn-primary,
-	.btn-outline {
-		@apply inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold tracking-[0.2em] uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+	.btn-ghost,
+	.btn-solid {
+		@apply px-8 py-3.5 text-base;
+	}
+
+	.btn-ghost {
+		@apply bg-transparent text-ink;
+	}
+
+	.btn-ghost:hover {
+		background-color: var(--color-cream-dark);
+	}
+
+	.btn-solid {
+		@apply bg-ink text-cream hover:bg-accent;
+	}
+
+	.btn-tab-active,
+	.btn-tab-inactive {
+		@apply px-5 py-2.5 text-sm;
+	}
+
+	.btn-tab-active {
+		@apply bg-ink text-cream;
+	}
+
+	.btn-tab-inactive {
+		@apply bg-transparent text-ink-muted;
+	}
+
+	.btn-tab-inactive:hover {
+		background-color: var(--color-cream-dark);
+		@apply text-ink;
+	}
+
+	.btn-tab-active:hover {
+		@apply bg-accent;
 	}
 
 	.btn-block {
 		@apply w-full;
-	}
-
-	.btn-primary {
-		@apply bg-ink text-cream hover:bg-accent;
-	}
-
-	.btn-outline {
-		@apply border border-ink text-ink hover:bg-ink hover:text-cream;
-	}
-
-	.btn-text {
-		@apply inline-flex items-center justify-center bg-transparent px-8 py-3.5 text-base font-semibold tracking-[0.2em] text-ink uppercase focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
-		transition: background-color 150ms ease-out;
-	}
-
-	.btn-text:hover {
-		background-color: var(--color-cream-dark);
 	}
 
 	/* Forms */
@@ -185,20 +204,5 @@
 	.input {
 		@apply w-full border border-cream-dark bg-white px-4 py-3 text-ink outline-none transition-colors focus:border-accent;
 		border-radius: var(--radius);
-	}
-
-	/* Filters & tabs */
-	.filter-tab-active,
-	.filter-tab-inactive {
-		@apply px-5 py-2.5 text-sm font-semibold tracking-[0.2em] uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
-		border-radius: var(--radius);
-	}
-
-	.filter-tab-active {
-		@apply bg-ink text-cream;
-	}
-
-	.filter-tab-inactive {
-		@apply text-ink-muted hover:text-ink;
 	}
 }

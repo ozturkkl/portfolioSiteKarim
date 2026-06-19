@@ -10,10 +10,10 @@
 	<h2 class="heading-section mb-8 text-center">{couple.label}</h2>
 
 	{#if couple.slider?.length}
-		<PhotoSlider media={couple.slider} class="mb-10" />
+		<PhotoSlider assets={couple.slider} class="mb-10" />
 	{/if}
 
 	{#if couple.media.length > 0}
-		<GalleryGrid media={couple.media} lightbox showCategory={false} />
+		<GalleryGrid assets={couple.media} lightbox showCategory={false} />
 	{/if}
 </section>

@@ -1,23 +1,24 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { navLinks, site } from '$lib/data/site';
 
 	let menuOpen = $state(false);
 	let heroVisible = $state(true);
 
-	const isHome = $derived($page.url.pathname === '/');
+	const pathname = $derived(page.url.pathname);
+	const isHome = $derived(pathname === resolve('/'));
 	const useLightHeader = $derived(isHome && heroVisible && !menuOpen);
 
 	function closeMenu() {
 		menuOpen = false;
 	}
 
-	function isActive(href: string) {
-		return $page.url.pathname === href;
+	function isActive(href: (typeof navLinks)[number]['href']) {
+		return pathname === resolve(href);
 	}
 
-	function navLinkClass(href: string) {
+	function navLinkClass(href: (typeof navLinks)[number]['href']) {
 		const active = isActive(href);
 		if (useLightHeader) {
 			return active ? 'text-white' : 'text-white/85 hover:text-white';
@@ -26,7 +27,7 @@
 	}
 
 	$effect(() => {
-		$page.url.pathname;
+		pathname;
 		menuOpen = false;
 	});
 
@@ -62,7 +63,7 @@
 		]}
 	>
 		<div
-			class="flex min-h-14 items-center justify-between gap-4 px-6 py-2 md:min-h-16 md:items-baseline md:px-10 md:py-2.5"
+			class="site-gutter flex min-h-14 items-center justify-between gap-4 py-2 md:min-h-16 md:items-baseline md:py-2.5"
 		>
 			<a
 				href={resolve('/')}
@@ -87,13 +88,12 @@
 
 			<button
 				type="button"
-				class="flex h-10 w-10 shrink-0 items-center justify-center md:hidden"
+				class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center md:hidden"
 				aria-label={menuOpen ? 'Close menu' : 'Open menu'}
 				aria-expanded={menuOpen}
 				onclick={() => (menuOpen = !menuOpen)}
 			>
-				<span class="sr-only">{menuOpen ? 'Close' : 'Menu'}</span>
-				<div class="flex w-5 flex-col gap-1.5">
+				<div class="flex w-5 flex-col gap-1.5" aria-hidden="true">
 					<span
 						class={[
 							'block h-px w-full transition-transform duration-300',
@@ -123,7 +123,7 @@
 	{#if menuOpen}
 		<nav
 			class={[
-				'border-b px-6 py-8 backdrop-blur-md md:hidden',
+				'site-gutter border-b py-8 backdrop-blur-md md:hidden',
 				useLightHeader ? 'border-white/10 bg-black/80' : 'border-cream-dark/50 bg-cream/98'
 			]}
 			aria-label="Mobile navigation"

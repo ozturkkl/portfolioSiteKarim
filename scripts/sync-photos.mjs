@@ -18,15 +18,6 @@ const CACHE_DIR = path.join(ROOT, '.cache/nextcloud');
 const MANIFEST_PATH = path.join(ROOT, 'src/lib/data/media.json');
 
 const AUTH = Buffer.from(`${nextcloud.shareToken}:`).toString('base64');
-const IMAGE_TYPES = new Set([
-	'image/jpeg',
-	'image/jpg',
-	'image/png',
-	'image/webp',
-	'image/gif',
-	'image/heic',
-	'image/heif'
-]);
 const IMAGE_EXT = /\.(jpe?g|png|webp|gif|heic|heif)$/i;
 const VIDEO_EXT = /\.(mp4|mov|webm|m4v|mkv|avi)$/i;
 

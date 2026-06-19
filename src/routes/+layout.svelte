@@ -18,12 +18,13 @@
 		rel="stylesheet"
 	/>
 	<link href="https://fonts.cdnfonts.com/css/perandory" rel="stylesheet" />
-	<meta name="description" content={site.tagline} />
-	<title>{site.name}</title>
+	<meta name="description" content={site.headline} />
 </svelte:head>
 
-<Header />
-<main>
-	{@render children()}
-</main>
-<Footer />
+<div class="flex min-h-svh flex-col">
+	<Header />
+	<main class="flex flex-1 flex-col">
+		{@render children()}
+	</main>
+	<Footer />
+</div>

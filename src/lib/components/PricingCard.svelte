@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Button from '$lib/components/ui/Button.svelte';
 	import type { PricingPackage } from '$lib/data/pricing';
 
 	let { pkg }: { pkg: PricingPackage } = $props();
@@ -10,13 +11,9 @@
 		'rounded-site flex flex-col border p-8 transition-shadow hover:shadow-lg md:p-10',
 		pkg.highlighted
 			? 'border-accent bg-white shadow-md'
-			: 'border-cream-dark bg-cream/50'
+			: 'border-ink/20 bg-cream/50'
 	]}
 >
-	{#if pkg.highlighted}
-		<p class="eyebrow mb-4">Most popular</p>
-	{/if}
-
 	<h3 class="heading-card">{pkg.name}</h3>
 	<p class="text-price mt-2">{pkg.price}</p>
 	<p class="text-body-muted mt-4 text-base">{pkg.description}</p>
@@ -30,10 +27,5 @@
 		{/each}
 	</ul>
 
-	<a
-		href={resolve('/contact')}
-		class={[pkg.highlighted ? 'btn-primary' : 'btn-outline', 'btn-block mt-10']}
-	>
-		Inquire
-	</a>
+	<Button href={resolve('/contact')} block class="mt-10">Inquire</Button>
 </article>

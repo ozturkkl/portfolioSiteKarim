@@ -5,18 +5,18 @@
 	import { isVideo } from '$lib/types/media';
 
 	let {
-		media,
+		assets,
 		showCategory = true,
 		lightbox = false
 	}: {
-		media: Array<GalleryMedia | MediaAsset>;
+		assets: Array<GalleryMedia | MediaAsset>;
 		showCategory?: boolean;
 		lightbox?: boolean;
 	} = $props();
 
 	let activeAsset = $state<MediaAsset | null>(null);
 
-	function mediaKey(item: GalleryMedia | MediaAsset, index: number): string {
+	function assetKey(item: GalleryMedia | MediaAsset, index: number): string {
 		return 'id' in item ? item.id : `${item.src}-${index}`;
 	}
 
@@ -35,7 +35,7 @@
 </script>
 
 <div class="columns-1 gap-4 space-y-4 sm:columns-2 sm:gap-5 sm:space-y-5 lg:columns-3">
-	{#each media as item, index (mediaKey(item, index))}
+	{#each assets as item, index (assetKey(item, index))}
 		{@const label = categoryLabel(item)}
 		<figure class={['photo-frame break-inside-avoid', showCategory && label && 'group relative']}>
 			{#if lightbox}
