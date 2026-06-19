@@ -13,6 +13,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Check required secrets
+        env:
+          NEXTCLOUD_HOST: ${{ secrets.NEXTCLOUD_HOST }}
+          NEXTCLOUD_SHARE_TOKEN: ${{ secrets.NEXTCLOUD_SHARE_TOKEN }}
+        run: |
+          if [ -z "$NEXTCLOUD_HOST" ]; then
+            echo "::error::Repository secret NEXTCLOUD_HOST is not set (Settings → Secrets and variables → Actions)."
+            exit 1
+          fi
+          if [ -z "$NEXTCLOUD_SHARE_TOKEN" ]; then
+            echo "::error::Repository secret NEXTCLOUD_SHARE_TOKEN is not set."
+            exit 1
+          fi
 
       - uses: actions/setup-node@v4
         with:
@@ -26,7 +42,7 @@ jobs:
         run: npm ci
 
       - name: Sync and optimize photos
-        run: npm run sync:photos
+        run: npm run sync
         env:
           NEXTCLOUD_HOST: ${{ secrets.NEXTCLOUD_HOST }}
           NEXTCLOUD_SHARE_TOKEN: ${{ secrets.NEXTCLOUD_SHARE_TOKEN }}

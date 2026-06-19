@@ -9,15 +9,15 @@ SvelteKit 2 · Svelte 5 runes · Tailwind v4 · `adapter-static` in `vite.config
 ## Commands
 
 ```bash
-npm run dev | build | preview | check | sync:photos
+npm run dev | build | preview | check | sync
 ```
 
-`sync:photos` needs `NEXTCLOUD_HOST` and `NEXTCLOUD_SHARE_TOKEN` in `.env` (sync only — not required for `dev`).
+`sync` needs `NEXTCLOUD_HOST` and `NEXTCLOUD_SHARE_TOKEN` in `.env` (sync only — not required for `dev`).
 
 ## Photos
 
 1. Source: Nextcloud public share (`scripts/photos.config.mjs` paths; token in `.env`)
-2. `npm run sync:photos` — wipes `static/images/`, re-downloads, writes `media.json`
+2. `npm run sync` — wipes `static/images/`, re-downloads, writes `media.json`
 3. Site: `$lib/data/media` — grids use `src`, lightbox uses `fullSrc`
 4. CI: `.github/workflows/sync-photos.yml` (daily + manual); secrets `NEXTCLOUD_HOST`, `NEXTCLOUD_SHARE_TOKEN`
 
