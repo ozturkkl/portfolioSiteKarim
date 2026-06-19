@@ -22,6 +22,7 @@
 		index = $bindable(0),
 		slide,
 		ontap,
+		onswipedown,
 		class: className = '',
 		disabled = false
 	}: {
@@ -29,6 +30,7 @@
 		index?: number;
 		slide: Snippet<[number]>;
 		ontap?: (event: PointerEvent) => void;
+		onswipedown?: () => void;
 		class?: string;
 		disabled?: boolean;
 	} = $props();
@@ -36,7 +38,9 @@
 	let viewport = $state<HTMLDivElement | null>(null);
 	let track = $state<HTMLDivElement | null>(null);
 	let width = $state(0);
+	let height = $state(0);
 	let scrollIndex = $state(0);
+	let dragY = $state(0);
 	let isDragging = $state(false);
 	let isAnimating = $state(false);
 
@@ -46,6 +50,7 @@
 	let axisLock: 'x' | 'y' | null = null;
 	let dragged = false;
 	let samples: PointerSample[] = [];
+	let ySamples: PointerSample[] = [];
 	let activePointerId: number | null = null;
 	let animFrame: number | null = null;
 
@@ -62,9 +67,11 @@
 
 		const observer = new ResizeObserver(([entry]) => {
 			width = entry.contentRect.width;
+			height = entry.contentRect.height;
 		});
 		observer.observe(viewport);
 		width = viewport.clientWidth;
+		height = viewport.clientHeight;
 
 		return () => observer.disconnect();
 	});
@@ -86,6 +93,7 @@
 		axisLock = null;
 		activePointerId = null;
 		samples = [];
+		ySamples = [];
 	}
 
 	function releasePointer(event: PointerEvent) {
@@ -103,20 +111,24 @@
 		isAnimating = false;
 	}
 
-	function startAnimation(velocity = 0) {
+	function animateValue(
+		from: number,
+		to: number,
+		velocity: number,
+		onUpdate: (value: number) => void,
+		onComplete?: () => void
+	) {
 		cancelAnimation();
 
-		const delta = scrollAnimationDelta(scrollIndex, index, count);
-		const targetScroll = scrollIndex + delta;
-
-		if (Math.abs(delta) < 0.001) {
-			scrollIndex = index;
+		const remaining = Math.abs(to - from);
+		if (remaining < 0.5) {
+			onUpdate(to);
+			onComplete?.();
 			return;
 		}
 
 		isAnimating = true;
-		const startScroll = scrollIndex;
-		const duration = swipeDurationMs(Math.abs(delta) * width, velocity);
+		const duration = swipeDurationMs(remaining, Math.abs(velocity));
 		const startTime = performance.now();
 
 		function step(now: number) {
@@ -126,18 +138,35 @@
 			}
 
 			const t = Math.min(1, (now - startTime) / duration);
-			scrollIndex = startScroll + (targetScroll - startScroll) * easeOutCubic(t);
+			onUpdate(from + (to - from) * easeOutCubic(t));
 
 			if (t < 1) {
 				animFrame = requestAnimationFrame(step);
 				return;
 			}
 
-			scrollIndex = index;
+			onUpdate(to);
 			cancelAnimation();
+			onComplete?.();
 		}
 
 		animFrame = requestAnimationFrame(step);
+	}
+
+	function startAnimation(velocity = 0) {
+		const delta = scrollAnimationDelta(scrollIndex, index, count);
+		const targetScroll = scrollIndex + delta;
+
+		if (Math.abs(delta) < 0.001) {
+			scrollIndex = index;
+			return;
+		}
+
+		animateValue(scrollIndex, targetScroll, velocity, (value) => {
+			scrollIndex = value;
+		}, () => {
+			scrollIndex = index;
+		});
 	}
 
 	function resolveTargetIndex(intent: SwipeIntent): number {
@@ -165,17 +194,37 @@
 		startAnimation(velocity);
 	}
 
+	function snapBackY(velocity = 0) {
+		animateValue(dragY, 0, velocity, (value) => {
+			dragY = value;
+		});
+	}
+
+	function resolveDismissIntent(dy: number, velocityY: number): boolean {
+		return (
+			resolveSwipeIntent({
+				displacement: -dy,
+				velocity: -velocityY,
+				width: height
+			}) === 'next'
+		);
+	}
+
 	function handlePointerDown(event: PointerEvent) {
 		if (event.pointerType === 'mouse' && event.button !== 0) return;
 		if (isVideoControlInteraction(event)) return;
 
 		if (!canSwipe) {
-			if (!ontap) return;
+			if (!ontap && !onswipedown) return;
 
+			cancelAnimation();
 			isDragging = true;
 			dragged = false;
+			axisLock = null;
+			dragY = 0;
 			startX = event.clientX;
 			startY = event.clientY;
+			ySamples = onswipedown ? [{ x: event.clientY, t: performance.now() }] : [];
 			activePointerId = event.pointerId;
 			viewport?.setPointerCapture(event.pointerId);
 			return;
@@ -188,10 +237,12 @@
 		isDragging = true;
 		dragged = false;
 		axisLock = null;
+		dragY = 0;
 		startX = event.clientX;
 		startY = event.clientY;
 		startScrollIndex = scrollIndex;
 		samples = [{ x: event.clientX, t: performance.now() }];
+		ySamples = onswipedown ? [{ x: event.clientY, t: performance.now() }] : [];
 		activePointerId = event.pointerId;
 		track?.setPointerCapture(event.pointerId);
 	}
@@ -199,15 +250,27 @@
 	function handlePointerMove(event: PointerEvent) {
 		if (!isDragging || activePointerId !== event.pointerId) return;
 
+		const dx = event.clientX - startX;
+		const dy = event.clientY - startY;
+
 		if (!canSwipe) {
-			const dx = event.clientX - startX;
-			const dy = event.clientY - startY;
+			if (
+				!axisLock &&
+				onswipedown &&
+				(Math.abs(dx) > SWIPE_LOCK_PX || Math.abs(dy) > SWIPE_LOCK_PX)
+			) {
+				axisLock = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+			}
+
+			if (axisLock === 'y' && onswipedown) {
+				event.preventDefault();
+				pushPointerSample(ySamples, event.clientY, performance.now());
+				dragY = Math.max(0, dy);
+			}
+
 			if (Math.abs(dx) > SWIPE_DRAG_PX || Math.abs(dy) > SWIPE_DRAG_PX) dragged = true;
 			return;
 		}
-
-		const dx = event.clientX - startX;
-		const dy = event.clientY - startY;
 
 		if (!axisLock) {
 			if (Math.abs(dx) < SWIPE_LOCK_PX && Math.abs(dy) < SWIPE_LOCK_PX) return;
@@ -215,9 +278,17 @@
 		}
 
 		if (axisLock === 'y') {
-			releasePointer(event);
-			resetGesture();
-			startAnimation();
+			if (!onswipedown) {
+				releasePointer(event);
+				resetGesture();
+				startAnimation();
+				return;
+			}
+
+			event.preventDefault();
+			pushPointerSample(ySamples, event.clientY, performance.now());
+			dragY = Math.max(0, dy);
+			if (Math.abs(dy) > SWIPE_DRAG_PX) dragged = true;
 			return;
 		}
 
@@ -231,16 +302,19 @@
 	function handlePointerUp(event: PointerEvent) {
 		if (!isDragging || activePointerId !== event.pointerId) return;
 
-		if (!canSwipe) {
-			releasePointer(event);
-			if (!dragged) ontap?.(event);
-			resetGesture();
-			return;
-		}
-
 		releasePointer(event);
 
-		if (axisLock === 'x') {
+		if (axisLock === 'y' && onswipedown) {
+			const dy = event.clientY - startY;
+			const velocityY = getPointerVelocity(ySamples);
+			if (resolveDismissIntent(dy, velocityY)) {
+				dragY = 0;
+				onswipedown();
+			} else {
+				snapBackY(velocityY);
+				if (!dragged) ontap?.(event);
+			}
+		} else if (canSwipe && axisLock === 'x') {
 			const dx = event.clientX - startX;
 			const velocity = getPointerVelocity(samples);
 			const intent = resolveSwipeIntent({
@@ -259,8 +333,11 @@
 	function handlePointerCancel(event: PointerEvent) {
 		if (activePointerId !== event.pointerId) return;
 		releasePointer(event);
+
+		if (dragY > 0) snapBackY();
+		else if (canSwipe) startAnimation();
+
 		resetGesture();
-		startAnimation();
 	}
 
 	export function goNext() {
@@ -279,39 +356,42 @@
 	class={['h-full w-full overflow-hidden', canSwipe ? 'touch-pan-y' : '', className]}
 >
 	{#if canSwipe}
-		<div
-			bind:this={track}
-			role="presentation"
-			class={[
-				'flex h-full cursor-grab select-none active:cursor-grabbing',
-				isDragging ? 'cursor-grabbing' : ''
-			]}
-			style:transform="translate3d({translateX}px, 0, 0)"
-			style:width="{width * 3}px"
-			style:touch-action="pan-y"
-			onpointerdown={handlePointerDown}
-			onpointermove={handlePointerMove}
-			onpointerup={handlePointerUp}
-			onpointercancel={handlePointerCancel}
-		>
-			<div class="h-full shrink-0" style:width="{width}px" aria-hidden="true">
-				{@render slide(prevIndex)}
-			</div>
-			<div class="h-full shrink-0" style:width="{width}px">
-				{@render slide(centerIndex)}
-			</div>
-			<div class="h-full shrink-0" style:width="{width}px" aria-hidden="true">
-				{@render slide(nextIndex)}
+		<div class="h-full" style:transform="translate3d(0, {dragY}px, 0)">
+			<div
+				bind:this={track}
+				role="presentation"
+				class={[
+					'flex h-full cursor-grab select-none active:cursor-grabbing',
+					isDragging ? 'cursor-grabbing' : ''
+				]}
+				style:transform="translate3d({translateX}px, 0, 0)"
+				style:width="{width * 3}px"
+				style:touch-action="pan-y"
+				onpointerdown={handlePointerDown}
+				onpointermove={handlePointerMove}
+				onpointerup={handlePointerUp}
+				onpointercancel={handlePointerCancel}
+			>
+				<div class="h-full shrink-0" style:width="{width}px" aria-hidden="true">
+					{@render slide(prevIndex)}
+				</div>
+				<div class="h-full shrink-0" style:width="{width}px">
+					{@render slide(centerIndex)}
+				</div>
+				<div class="h-full shrink-0" style:width="{width}px" aria-hidden="true">
+					{@render slide(nextIndex)}
+				</div>
 			</div>
 		</div>
 	{:else}
 		<div
 			role="presentation"
 			class="h-full w-full"
-			onpointerdown={ontap ? handlePointerDown : undefined}
-			onpointermove={ontap ? handlePointerMove : undefined}
-			onpointerup={ontap ? handlePointerUp : undefined}
-			onpointercancel={ontap ? handlePointerCancel : undefined}
+			style:transform="translate3d(0, {dragY}px, 0)"
+			onpointerdown={ontap || onswipedown ? handlePointerDown : undefined}
+			onpointermove={ontap || onswipedown ? handlePointerMove : undefined}
+			onpointerup={ontap || onswipedown ? handlePointerUp : undefined}
+			onpointercancel={ontap || onswipedown ? handlePointerCancel : undefined}
 		>
 			{@render slide(index)}
 		</div>

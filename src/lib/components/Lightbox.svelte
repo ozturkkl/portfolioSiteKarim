@@ -185,6 +185,7 @@
 				bind:index
 				{slide}
 				ontap={handleCarouselTap}
+				onswipedown={close}
 				class="h-full w-full"
 			/>
 			{#if multiple}

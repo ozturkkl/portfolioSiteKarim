@@ -27,7 +27,7 @@
 	type="button"
 	tabindex={-1}
 	class={[
-		'absolute inset-y-0 z-20 hidden grid place-items-center sm:grid',
+		'absolute inset-y-0 z-20 grid place-items-center',
 		stripWidth,
 		stripClass,
 		isPrev ? 'left-0' : 'right-0'
