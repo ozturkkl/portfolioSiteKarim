@@ -66,7 +66,7 @@
 
 	<div
 		bind:this={filterGroup}
-		class="mb-6 flex flex-wrap justify-center gap-4 md:mb-12"
+		class="-mx-3 mb-6 flex flex-wrap justify-center gap-1 md:mx-0 md:mb-12 md:gap-4"
 		role="toolbar"
 		aria-label="Filter gallery by category"
 	>
@@ -74,6 +74,7 @@
 			<Button
 				variant="tab"
 				type="button"
+				class="max-sm:px-2 max-sm:py-1.5 max-sm:text-xs max-sm:tracking-[0.12em]"
 				active={activeCategory === category}
 				aria-pressed={activeCategory === category}
 				onclick={() => selectCategory(category)}
