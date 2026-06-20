@@ -14,8 +14,6 @@
 	} from '$lib/utils/carousel';
 
 	const packages = pricingPackages;
-	const CARD_PX = 272;
-	const GAP_PX = 16;
 	const defaultIndex = Math.max(0, packages.findIndex((p) => p.id === 'engagement'));
 
 	let {
@@ -26,7 +24,10 @@
 
 	let root = $state<HTMLElement | null>(null);
 	let viewport = $state<HTMLElement | null>(null);
+	let track = $state<HTMLElement | null>(null);
 	let width = $state(0);
+	let cardPx = $state(272);
+	let gapPx = $state(16);
 	let revealed = $state(false);
 	let index = $state(defaultIndex);
 	let dragOffset = $state(0);
@@ -41,8 +42,8 @@
 	const layout = $derived(
 		peekCarouselLayout({
 			viewportWidth: width,
-			cardPx: CARD_PX,
-			gap: GAP_PX,
+			cardPx,
+			gap: gapPx,
 			index,
 			count: packages.length
 		})
@@ -81,20 +82,30 @@
 		};
 	});
 
-	function emphasis(cardIndex: number) {
-		const d = Math.abs(cardIndex - index);
-		if (d === 0) return { active: true, opacity: 1, scale: 1 };
-		if (d === 1) return { active: false, opacity: 0.88, scale: 0.98 };
-		return { active: false, opacity: 0.8, scale: 0.96 };
-	}
+	$effect(() => {
+		if (!track) return;
+
+		function measure() {
+			if (!track) return;
+			const card = track.querySelector<HTMLElement>('[data-pricing-card]');
+			if (card) cardPx = card.offsetWidth;
+			gapPx = parseFloat(getComputedStyle(track).gap) || 16;
+		}
+
+		const ro = new ResizeObserver(measure);
+		ro.observe(track);
+		measure();
+
+		return () => ro.disconnect();
+	});
 
 	function tapZone(clientX: number): 'prev' | 'next' | null {
 		if (!viewport || width <= 0) return null;
 
 		const rect = viewport.getBoundingClientRect();
 		const x = clientX - rect.left;
-		const cardLeft = (rect.width - CARD_PX) / 2;
-		const cardRight = cardLeft + CARD_PX;
+		const cardLeft = (rect.width - cardPx) / 2;
+		const cardRight = cardLeft + cardPx;
 
 		if (x < cardLeft) return 'prev';
 		if (x > cardRight) return 'next';
@@ -219,8 +230,8 @@
 				]}
 			>
 				<div
-					class="box-border flex items-stretch select-none"
-					style:gap="{GAP_PX}px"
+					bind:this={track}
+					class="box-border flex items-stretch gap-4 select-none md:gap-5"
 					style:padding-left="{layout.sidePad}px"
 					style:padding-right="{layout.sidePad}px"
 					style:width="{layout.trackWidth + layout.sidePad * 2}px"
@@ -230,18 +241,12 @@
 						: 'none'}
 				>
 					{#each packages as pkg, i (pkg.id)}
-						{@const e = emphasis(i)}
 						<div
-							class={[
-								'shrink-0',
-								revealed ? 'transition-[opacity,transform] duration-300' : ''
-							]}
-							style:width="{CARD_PX}px"
-							style:opacity={e.opacity}
-							style:transform="scale({e.scale})"
-							aria-hidden={!e.active}
+							data-pricing-card
+							class="w-[17rem] shrink-0 md:w-[21.25rem] xl:w-[22.5rem]"
+							aria-hidden={i !== index}
 						>
-							<PricingCard {pkg} active={e.active} />
+							<PricingCard {pkg} active={i === index} />
 						</div>
 					{/each}
 				</div>
