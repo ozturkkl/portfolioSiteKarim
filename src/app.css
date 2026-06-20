@@ -34,7 +34,7 @@
 
 @layer utilities {
 	.section-padding {
-		@apply px-6 py-20 md:px-12 md:py-28 lg:px-20;
+		@apply px-6 py-16 md:px-12 md:py-28 lg:px-20;
 	}
 
 	.container-narrow {
@@ -55,7 +55,7 @@
 	}
 
 	.page-section {
-		@apply pb-8 pt-24 md:pb-12 md:pt-28;
+		@apply pb-6 pt-20 md:pb-12 md:pt-28;
 	}
 
 	.rounded-site {
@@ -74,7 +74,7 @@
 	}
 
 	.heading-page {
-		@apply font-serif text-5xl font-light tracking-wide text-ink md:text-6xl lg:text-7xl;
+		@apply font-serif text-3xl font-light tracking-wide text-ink md:text-6xl lg:text-7xl;
 	}
 
 	.heading-section {
@@ -98,7 +98,7 @@
 	}
 
 	.text-body-muted {
-		@apply text-lg leading-relaxed text-ink-muted md:text-xl;
+		@apply text-sm leading-relaxed text-ink-muted md:text-xl;
 	}
 
 	.text-caption {

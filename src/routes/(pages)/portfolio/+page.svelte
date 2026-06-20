@@ -66,7 +66,7 @@
 
 	<div
 		bind:this={filterGroup}
-		class="mb-12 flex flex-wrap justify-center gap-4"
+		class="mb-6 flex flex-wrap justify-center gap-4 md:mb-12"
 		role="toolbar"
 		aria-label="Filter gallery by category"
 	>
