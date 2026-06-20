@@ -18,7 +18,7 @@
 	height={asset.height}
 	class={[
 		'shrink-0 rounded-full object-cover',
-		'size-48 sm:size-52 md:size-56 lg:size-64 xl:size-72',
+		'size-48 sm:size-52 md:size-64',
 		className
 	]}
 	loading="lazy"

@@ -35,10 +35,10 @@ See [AGENTS.md](./AGENTS.md) for agent context.
 
 ## TODO
 
-- [ ] **Contact form** — wire submit to a service (Formspree, Netlify Forms, etc.) or `mailto:` fallback
+- [x] **Contact form** — Web3Forms (`PUBLIC_WEB3FORMS_ACCESS_KEY` in `.env`, comma-separated for multiple inboxes; GitHub Actions secret for deploy)
 - [ ] **About copy** — refresh home vs about page copy to reduce overlap
-- [ ] **Lightbox** — shared page-level lightbox, keyboard nav, carousel a11y
+- [x] **Lightbox** — shared page-level lightbox, keyboard nav, carousel a11y
 - [ ] **SEO** — per-page meta descriptions, Open Graph / Twitter Card tags
-- [ ] **media.json validation** — validate manifest shape at sync or build time
+- [x] **media.json validation** — validate manifest shape at sync or build time
 - [ ] **Sitemap** — generate `sitemap.xml` at build for static routes
 - [ ] **Perandory font** — self-host with `font-display: swap` to reduce FOUT (fallback stack: Cormorant Garamond)

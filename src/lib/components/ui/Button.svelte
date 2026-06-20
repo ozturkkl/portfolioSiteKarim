@@ -7,6 +7,7 @@
 		variant?: 'ghost' | 'solid' | 'tab';
 		active?: boolean;
 		block?: boolean;
+		disabled?: boolean;
 		class?: string;
 		children: Snippet;
 		type?: 'button' | 'submit' | 'reset';
@@ -19,6 +20,7 @@
 		variant = 'solid',
 		active = false,
 		block = false,
+		disabled = false,
 		class: className = '',
 		children,
 		...rest
@@ -38,7 +40,7 @@
 		{@render children()}
 	</a>
 {:else}
-	<button {type} class={classes} {...rest}>
+	<button {type} class={classes} {disabled} {...rest}>
 		{@render children()}
 	</button>
 {/if}

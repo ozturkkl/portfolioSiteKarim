@@ -3,6 +3,7 @@
 	import PricingCarousel from '$lib/components/PricingCarousel.svelte';
 	import PageContainer from '$lib/components/ui/PageContainer.svelte';
 	import SectionHeading from '$lib/components/ui/SectionHeading.svelte';
+	import { defaultPackageId } from '$lib/data/pricing';
 	import { pageTitle } from '$lib/data/site';
 </script>
 
@@ -20,7 +21,7 @@
 
 	<p class="text-body-muted mx-auto mt-8 max-w-3xl text-center md:mt-16">
 		Custom packages available for elopements and commercial work.
-		<a href={resolve('/contact')} class="link-accent">Get in touch</a>
+		<a href={`${resolve('/contact')}?package=${defaultPackageId}`} class="link-accent">Get in touch</a>
 		to discuss your vision.
 	</p>
 </PageContainer>

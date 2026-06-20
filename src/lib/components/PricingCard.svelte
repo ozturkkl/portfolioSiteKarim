@@ -31,5 +31,5 @@
 		{/each}
 	</ul>
 
-	<Button href={resolve('/contact')} block class="mt-10">Inquire</Button>
+	<Button href={`${resolve('/contact')}?package=${pkg.id}`} block class="mt-10">Inquire</Button>
 </article>

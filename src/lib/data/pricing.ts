@@ -44,5 +44,22 @@ export const pricingPackages: PricingPackage[] = [
 			'1-week delivery',
 			'I can suggest locations'
 		]
+	},
+	{
+		id: 'custom',
+		name: 'Custom',
+		price: "Let's talk",
+		description: 'We’ll shape a package around your vision.',
+		features: [
+			'Tailored coverage and deliverables',
+			'Elopements and intimate celebrations',
+			'Commercial and editorial work'
+		]
 	}
 ];
+
+export const defaultPackageId = 'custom';
+
+export function isPackageSelectionId(id: string) {
+	return pricingPackages.some((pkg) => pkg.id === id);
+}

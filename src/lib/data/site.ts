@@ -17,9 +17,9 @@ export const site = {
 		}
 	},
 	contact: {
-		email: 'hello@ilaydaturkmen.com',
-		instagram: '@ilaydaturkmen',
-		instagramUrl: 'https://instagram.com/ilaydaturkmen'
+		email: '97ilaydaturkmen@gmail.com',
+		instagram: '@ilaydashoots',
+		instagramUrl: 'https://www.instagram.com/ilaydashoots/'
 	},
 	footer: {
 		note: "Hi there — thanks for stopping by. I'm so glad you're here, and I'd love to hear from you anytime."
