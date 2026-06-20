@@ -8,20 +8,20 @@
 		alt,
 		width,
 		height,
+		loadFull = false,
 		class: className = '',
 		fullFailed = false,
-		onfullerror,
-		loadedUrls = $bindable({})
+		onfullerror
 	}: {
 		src: string;
 		fullSrc: string;
 		alt: string;
 		width: number;
 		height: number;
+		loadFull?: boolean;
 		class?: string;
 		fullFailed?: boolean;
 		onfullerror?: () => void;
-		loadedUrls?: Record<string, boolean>;
 	} = $props();
 
 	const imageClass =
@@ -29,22 +29,24 @@
 
 	let paintReady = $state(false);
 
-	const showSpinner = $derived(!fullFailed && !paintReady);
+	const showSpinner = $derived(loadFull && !fullFailed && !paintReady);
 
 	$effect.pre(() => {
 		fullSrc;
+		loadFull;
 		paintReady = false;
 	});
 
-	const fullImgAction: Action<HTMLImageElement, string> = (img, url) => {
+	const fullImgAction: Action<HTMLImageElement> = (img) => {
+		let cancelled = false;
+
 		const markReady = () => {
+			if (cancelled) return;
 			paintReady = true;
-			if (!loadedUrls[url]) {
-				loadedUrls = { ...loadedUrls, [url]: true };
-			}
 		};
 
 		const reveal = () => {
+			if (cancelled) return;
 			if (img.decode) {
 				img.decode().then(markReady).catch(markReady);
 				return;
@@ -55,7 +57,11 @@
 
 		if (img.complete && img.naturalWidth > 0) {
 			reveal();
-			return {};
+			return {
+				destroy() {
+					cancelled = true;
+				}
+			};
 		}
 
 		const onLoad = () => {
@@ -67,6 +73,7 @@
 
 		return {
 			destroy() {
+				cancelled = true;
 				img.removeEventListener('load', onLoad);
 			}
 		};
@@ -86,21 +93,22 @@
 			<img
 				src={staticSrc(src)}
 				{alt}
-				class={[imageClass, paintReady ? 'opacity-0' : 'opacity-100']}
+				class={[imageClass, 'opacity-100']}
 				decoding="async"
 				draggable="false"
 			/>
 		{/key}
 
-		{#if !fullFailed}
+		{#if loadFull && !fullFailed}
 			{#key fullSrc}
 				<img
-					use:fullImgAction={fullSrc}
+					use:fullImgAction
 					src={fullSrc}
 					alt=""
 					aria-hidden="true"
 					class={[imageClass, paintReady ? 'opacity-100' : 'opacity-0']}
 					decoding="async"
+					fetchpriority="high"
 					draggable="false"
 					onerror={onfullerror}
 				/>

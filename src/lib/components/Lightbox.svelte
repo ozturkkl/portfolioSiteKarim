@@ -22,7 +22,6 @@
 	let dialog = $state<HTMLDialogElement | null>(null);
 	let carousel = $state<SwipeCarousel | null>(null);
 	let imageFailed = $state<Record<number, boolean>>({});
-	let fullLoadedUrls = $state<Record<string, boolean>>({});
 	let wasClosed = $state(true);
 
 	const isOpen = $derived(assets.length > 0);
@@ -40,7 +39,6 @@
 		if (!dialog) return;
 		if (isOpen) {
 			imageFailed = {};
-			fullLoadedUrls = {};
 			if (!dialog.open) {
 				dialog.showModal();
 				(document.activeElement as HTMLElement | null)?.blur();
@@ -231,8 +229,8 @@
 				alt={asset.alt}
 				width={asset.width}
 				height={asset.height}
+				loadFull={assetIndex === index}
 				fullFailed={imageFailed[assetIndex] ?? false}
-				bind:loadedUrls={fullLoadedUrls}
 				onfullerror={() => handleImageError(assetIndex)}
 			/>
 		{/if}

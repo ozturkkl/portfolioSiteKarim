@@ -480,7 +480,8 @@
 					role="presentation"
 					class={[
 						'flex h-full cursor-grab select-none active:cursor-grabbing',
-						isDragging ? 'cursor-grabbing' : ''
+						isDragging ? 'cursor-grabbing' : '',
+						isDragging || isAnimating ? 'will-change-transform' : ''
 					]}
 					style:transform="translate3d({translateX}px, 0, 0)"
 					style:width="{width * 3}px"
