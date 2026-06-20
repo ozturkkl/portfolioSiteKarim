@@ -2,6 +2,9 @@
 
 SvelteKit portfolio. Live at [ilaydaturkmen.com](https://ilaydaturkmen.com).
 
+<img width="1621" height="1273" alt="image" src="https://github.com/user-attachments/assets/316ed5f2-99b7-4bcc-be72-4c679b60b8fc" />
+
+
 ```bash
 npm install
 cp .env.example .env   # NEXTCLOUD_HOST + NEXTCLOUD_SHARE_TOKEN
