@@ -2,19 +2,23 @@ export const site = {
 	name: 'Ilayda Turkmen',
 	brandName: 'ilayda turkmen',
 	headline: 'Your story captured with passion',
-	about: {
-		greeting: 'Hello, I am Ilayda',
+	homeAbout: {
 		intro:
-			"I'm a creative soul who loves everything about art — drawing, crafting, and most of all, photography. When I shoot, I aim to capture moments in a cinematic way, full of raw emotion. I genuinely love connecting with people, learning their stories, and capturing their essence through my lens.",
+			'One of my biggest passions is to document people in their real, unfiltered moments. When I see people laughing together, sipping their coffee, walking down the street holding hands, running somewhere, escaping the rain, I immediately think, "That would make a great photograph."'
+	},
+	about: {
+		greeting: 'Hi, I\'m Ilayda Turkmen.',
+		intro:
+			"I was born and raised in Turkey and currently live in Chicago. Throughout my life, I've had the opportunity to live in different cultures, meet people from all walks of life, and experience many different environments. I've always been observant and curious, noticing the details in my surroundings wherever I've been.",
 		paragraphs: [
-			'Maybe that\'s why people often say I "see" them in a special way — because every session is a collaboration, a conversation, and a chance to tell a story that feels uniquely yours.',
-			"When I'm not behind the camera, you'll find me exploring new places, collecting vintage finds, or curled up with a good book and too much coffee."
+			"During my freshman year of college, my dad gifted me my first DSLR camera, and that's where my photography journey really began.",
+			'There was a skate park near my house that I passed by almost every day. I remember thinking that every corner of that park, filled with unique people, looked like a scene straight out of a photograph. One day, I grabbed my camera and spent hours photographing people skating, talking to each other, laughing…',
+			'After that, I started going to New York City often and spent a lot of time doing street photography. I love telling stories through my photos. One of my biggest passions is to document people in their real, unfiltered moments. When I see people laughing together, sipping their coffee, walking down the street holding hands, running somewhere, escaping the rain, I immediately think, "That would make a great photograph." I can spend hours trying to capture a single moment.',
+			"I've been behind the camera for over 6 years, and my approach is simple: capturing real emotions and life."
 		],
-		philosophy: {
-			eyebrow: 'Philosophy',
-			quote:
-				'Photography is the art of freezing time — not to hold it still, but to remind us how beautifully fleeting every moment truly is.'
-		}
+		cta: "Let's chat!",
+		quote:
+			'I was used to looking at the world through a rectangular window, and it will always continue that way'
 	},
 	contact: {
 		email: '97ilaydaturkmen@gmail.com',

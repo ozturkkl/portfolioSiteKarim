@@ -59,10 +59,7 @@
 </svelte:head>
 
 <PageContainer>
-	<SectionHeading
-		title="A collection of stories"
-		subtitle="Each image is a moment preserved — raw, honest, and full of feeling."
-	/>
+	<SectionHeading title="A collection of stories" />
 
 	<div
 		bind:this={filterGroup}
