@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-06-23T07:27:08.644Z",
+	"syncedAt": "2026-06-23T17:34:44.047Z",
 	"hero": {
 		"src": "/images/hero.jpg",
 		"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/HERO.JPG",
@@ -34,165 +34,183 @@
 	},
 	"homeGrid": [
 		{
-			"src": "/images/grid/grid-1-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/1.JPG",
-			"alt": "Portfolio preview — 1",
+			"src": "/images/grid/grid-1-new-york-21-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/1-New%20York%20'21.JPG",
+			"alt": "Portfolio preview — 1-New York '21",
 			"width": 1066,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New York '21"
 		},
 		{
-			"src": "/images/grid/grid-2-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/2.JPG",
-			"alt": "Portfolio preview — 2",
+			"src": "/images/grid/grid-2-new-york-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/2-New%20York%20'25.JPG",
+			"alt": "Portfolio preview — 2-New York '25",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New York '25"
 		},
 		{
-			"src": "/images/grid/grid-3-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/3.JPG",
-			"alt": "Portfolio preview — 3",
+			"src": "/images/grid/grid-3-chicago-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/3-Chicago%20'25.JPG",
+			"alt": "Portfolio preview — 3-Chicago '25",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "Chicago '25"
 		},
 		{
-			"src": "/images/grid/grid-4-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/4.jpg",
-			"alt": "Portfolio preview — 4",
+			"src": "/images/grid/grid-4-chicago-26-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/4-Chicago%20'26.jpg",
+			"alt": "Portfolio preview — 4-Chicago '26",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "Chicago '26"
 		},
 		{
-			"src": "/images/grid/grid-5-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/5.JPG",
-			"alt": "Portfolio preview — 5",
+			"src": "/images/grid/grid-5-new-jersey-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/5-New%20Jersey%20'25.JPG",
+			"alt": "Portfolio preview — 5-New Jersey '25",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New Jersey '25"
 		},
 		{
-			"src": "/images/grid/grid-6-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/6.JPG",
-			"alt": "Portfolio preview — 6",
+			"src": "/images/grid/grid-6-new-jersey-24-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/6-New%20Jersey%20'24.JPG",
+			"alt": "Portfolio preview — 6-New Jersey '24",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New Jersey '24"
 		},
 		{
-			"src": "/images/grid/grid-7-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/7.JPG",
-			"alt": "Portfolio preview — 7",
+			"src": "/images/grid/grid-7-new-york-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/7-New%20York%20'25.JPG",
+			"alt": "Portfolio preview — 7-New York '25",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New York '25"
 		},
 		{
-			"src": "/images/grid/grid-8-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/8.JPG",
-			"alt": "Portfolio preview — 8",
+			"src": "/images/grid/grid-8-new-york-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/8-New%20York%20'25.JPG",
+			"alt": "Portfolio preview — 8-New York '25",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New York '25"
 		},
 		{
-			"src": "/images/grid/grid-9-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/9.JPG",
-			"alt": "Portfolio preview — 9",
+			"src": "/images/grid/grid-9-new-york-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/9-new%20York%20'25.JPG",
+			"alt": "Portfolio preview — 9-new York '25",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "new York '25"
 		},
 		{
-			"src": "/images/grid/grid-10-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/10.JPG",
-			"alt": "Portfolio preview — 10",
+			"src": "/images/grid/grid-10-new-jersey-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/10-New%20Jersey%20'25.JPG",
+			"alt": "Portfolio preview — 10-New Jersey '25",
 			"width": 1600,
 			"height": 1080,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New Jersey '25"
 		},
 		{
-			"src": "/images/grid/grid-11-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/11.JPG",
-			"alt": "Portfolio preview — 11",
+			"src": "/images/grid/grid-11-chicago-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/11%20-%20Chicago%20'25.JPG",
+			"alt": "Portfolio preview — 11 - Chicago '25",
 			"width": 1067,
 			"height": 1600,
 			"kind": "image"
 		},
 		{
-			"src": "/images/grid/grid-12-test-name-hello-kemal-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/12-Test%20name%20hello%20kemal.JPG",
-			"alt": "Portfolio preview — 12-Test name hello kemal",
+			"src": "/images/grid/grid-12-chicago-26-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/12-Chicago%20'26.JPG",
+			"alt": "Portfolio preview — 12-Chicago '26",
 			"width": 1600,
 			"height": 1067,
 			"kind": "image",
-			"caption": "Test name hello kemal"
+			"caption": "Chicago '26"
 		},
 		{
-			"src": "/images/grid/grid-13-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/13.JPG",
-			"alt": "Portfolio preview — 13",
+			"src": "/images/grid/grid-13-chicago-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/13-Chicago%20'25%20.JPG",
+			"alt": "Portfolio preview — 13-Chicago '25 ",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "Chicago '25"
 		},
 		{
-			"src": "/images/grid/grid-14-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/14.JPG",
-			"alt": "Portfolio preview — 14",
+			"src": "/images/grid/grid-14-new-york-23-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/14-New%20York%20'23.JPG",
+			"alt": "Portfolio preview — 14-New York '23",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New York '23"
 		},
 		{
-			"src": "/images/grid/grid-15-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/15.jpg",
-			"alt": "Portfolio preview — 15",
+			"src": "/images/grid/grid-15-chicago-26-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/15-Chicago%20'26.jpg",
+			"alt": "Portfolio preview — 15-Chicago '26",
 			"width": 1600,
 			"height": 1192,
-			"kind": "image"
+			"kind": "image",
+			"caption": "Chicago '26"
 		},
 		{
-			"src": "/images/grid/grid-16-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/16.JPG",
-			"alt": "Portfolio preview — 16",
+			"src": "/images/grid/grid-16-pittsburgh-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/16-Pittsburgh%20'25.JPG",
+			"alt": "Portfolio preview — 16-Pittsburgh '25",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "Pittsburgh '25"
 		},
 		{
-			"src": "/images/grid/grid-17-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/17.JPG",
-			"alt": "Portfolio preview — 17",
+			"src": "/images/grid/grid-17-new-jersey-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/17-New%20Jersey%20'25.JPG",
+			"alt": "Portfolio preview — 17-New Jersey '25",
 			"width": 1600,
 			"height": 1072,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New Jersey '25"
 		},
 		{
-			"src": "/images/grid/grid-18-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/18.JPG",
-			"alt": "Portfolio preview — 18",
+			"src": "/images/grid/grid-18-new-jersey-24-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/18-New%20Jersey%20'24.JPG",
+			"alt": "Portfolio preview — 18-New Jersey '24",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New Jersey '24"
 		},
 		{
-			"src": "/images/grid/grid-19-jpeg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/19.JPEG",
-			"alt": "Portfolio preview — 19",
+			"src": "/images/grid/grid-19-chicago-25-jpeg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/19-Chicago%20'25.JPEG",
+			"alt": "Portfolio preview — 19-Chicago '25",
 			"width": 1067,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "Chicago '25"
 		},
 		{
-			"src": "/images/grid/grid-20-jpg.jpg",
-			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/20.JPG",
-			"alt": "Portfolio preview — 20",
+			"src": "/images/grid/grid-20-new-york-25-jpg.jpg",
+			"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/0-HOME/GRID/20-New%20York%20'25.JPG",
+			"alt": "Portfolio preview — 20-New York '25",
 			"width": 1066,
 			"height": 1600,
-			"kind": "image"
+			"kind": "image",
+			"caption": "New York '25"
 		}
 	],
 	"portfolio": {
@@ -476,16 +494,6 @@
 			},
 			{
 				"id": "g-79",
-				"src": "/images/portfolio/street-28-jpg.jpg",
-				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/28.JPG",
-				"alt": "street — 28",
-				"width": 1067,
-				"height": 1600,
-				"kind": "image",
-				"category": "street"
-			},
-			{
-				"id": "g-80",
 				"src": "/images/portfolio/street-29-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/29.JPG",
 				"alt": "street — 29",
@@ -495,7 +503,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-81",
+				"id": "g-80",
 				"src": "/images/portfolio/street-30-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/30.JPG",
 				"alt": "street — 30",
@@ -505,7 +513,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-82",
+				"id": "g-81",
 				"src": "/images/portfolio/street-31-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/31.JPG",
 				"alt": "street — 31",
@@ -515,7 +523,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-83",
+				"id": "g-82",
 				"src": "/images/portfolio/street-32-jpeg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/32.JPEG",
 				"alt": "street — 32",
@@ -525,7 +533,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-84",
+				"id": "g-83",
 				"src": "/images/portfolio/street-33-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/33.JPG",
 				"alt": "street — 33",
@@ -535,7 +543,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-85",
+				"id": "g-84",
 				"src": "/images/portfolio/street-34-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/34.JPG",
 				"alt": "street — 34",
@@ -545,7 +553,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-86",
+				"id": "g-85",
 				"src": "/images/portfolio/street-35-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/35.JPG",
 				"alt": "street — 35",
@@ -555,7 +563,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-87",
+				"id": "g-86",
 				"src": "/images/portfolio/street-36-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/36.JPG",
 				"alt": "street — 36",
@@ -565,7 +573,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-88",
+				"id": "g-87",
 				"src": "/images/portfolio/street-37-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/37.JPG",
 				"alt": "street — 37",
@@ -575,7 +583,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-89",
+				"id": "g-88",
 				"src": "/images/portfolio/street-38-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/38.JPG",
 				"alt": "street — 38",
@@ -585,7 +593,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-90",
+				"id": "g-89",
 				"src": "/images/portfolio/street-39-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/39.jpg",
 				"alt": "street — 39",
@@ -595,7 +603,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-91",
+				"id": "g-90",
 				"src": "/images/portfolio/street-40-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/40.JPG",
 				"alt": "street — 40",
@@ -605,7 +613,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-92",
+				"id": "g-91",
 				"src": "/images/portfolio/street-41-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/41.JPG",
 				"alt": "street — 41",
@@ -615,7 +623,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-93",
+				"id": "g-92",
 				"src": "/images/portfolio/street-42-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/42.JPG",
 				"alt": "street — 42",
@@ -625,7 +633,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-94",
+				"id": "g-93",
 				"src": "/images/portfolio/street-43-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/43.JPG",
 				"alt": "street — 43",
@@ -635,7 +643,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-95",
+				"id": "g-94",
 				"src": "/images/portfolio/street-44-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/44.JPG",
 				"alt": "street — 44",
@@ -645,7 +653,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-96",
+				"id": "g-95",
 				"src": "/images/portfolio/street-45-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/1-STREET/45.jpg",
 				"alt": "street — 45",
@@ -655,7 +663,7 @@
 				"category": "street"
 			},
 			{
-				"id": "g-97",
+				"id": "g-96",
 				"src": "/images/portfolio/life-1-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/1.JPG",
 				"alt": "life — 1",
@@ -665,7 +673,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-98",
+				"id": "g-97",
 				"src": "/images/portfolio/life-2-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/2.JPG",
 				"alt": "life — 2",
@@ -675,7 +683,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-99",
+				"id": "g-98",
 				"src": "/images/portfolio/life-3-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/3.JPG",
 				"alt": "life — 3",
@@ -685,7 +693,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-100",
+				"id": "g-99",
 				"src": "/images/portfolio/life-4-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/4.JPG",
 				"alt": "life — 4",
@@ -695,7 +703,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-101",
+				"id": "g-100",
 				"src": "/images/portfolio/life-5-jpeg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/5.JPEG",
 				"alt": "life — 5",
@@ -705,7 +713,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-102",
+				"id": "g-101",
 				"src": "/images/portfolio/life-6-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/6.JPG",
 				"alt": "life — 6",
@@ -715,7 +723,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-103",
+				"id": "g-102",
 				"src": "/images/portfolio/life-7-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/7.JPG",
 				"alt": "life — 7",
@@ -725,7 +733,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-104",
+				"id": "g-103",
 				"src": "/images/portfolio/life-8-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/8.JPG",
 				"alt": "life — 8",
@@ -735,7 +743,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-105",
+				"id": "g-104",
 				"src": "/images/portfolio/life-9-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/9.JPG",
 				"alt": "life — 9",
@@ -745,7 +753,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-106",
+				"id": "g-105",
 				"src": "/images/portfolio/life-10-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/10.JPG",
 				"alt": "life — 10",
@@ -755,7 +763,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-107",
+				"id": "g-106",
 				"src": "/images/portfolio/life-11-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/11.jpg",
 				"alt": "life — 11",
@@ -765,7 +773,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-108",
+				"id": "g-107",
 				"src": "/images/portfolio/life-12-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/12.JPG",
 				"alt": "life — 12",
@@ -775,7 +783,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-109",
+				"id": "g-108",
 				"src": "/images/portfolio/life-13-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/13.JPG",
 				"alt": "life — 13",
@@ -785,7 +793,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-110",
+				"id": "g-109",
 				"src": "/images/portfolio/life-14-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/14.JPG",
 				"alt": "life — 14",
@@ -795,7 +803,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-111",
+				"id": "g-110",
 				"src": "/images/portfolio/life-15-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/15.JPG",
 				"alt": "life — 15",
@@ -805,7 +813,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-112",
+				"id": "g-111",
 				"src": "/images/portfolio/life-16-jpeg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/16.JPEG",
 				"alt": "life — 16",
@@ -815,7 +823,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-113",
+				"id": "g-112",
 				"src": "/images/portfolio/life-17-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/17.jpg",
 				"alt": "life — 17",
@@ -825,7 +833,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-114",
+				"id": "g-113",
 				"src": "/images/portfolio/life-18-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/18.JPG",
 				"alt": "life — 18",
@@ -835,7 +843,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-115",
+				"id": "g-114",
 				"src": "/images/portfolio/life-19-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/19.JPG",
 				"alt": "life — 19",
@@ -845,7 +853,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-116",
+				"id": "g-115",
 				"src": "/images/portfolio/life-20-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/20.JPG",
 				"alt": "life — 20",
@@ -855,7 +863,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-117",
+				"id": "g-116",
 				"src": "/images/portfolio/life-21-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/21.JPG",
 				"alt": "life — 21",
@@ -865,7 +873,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-118",
+				"id": "g-117",
 				"src": "/images/portfolio/life-22-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/22.JPG",
 				"alt": "life — 22",
@@ -875,7 +883,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-119",
+				"id": "g-118",
 				"src": "/images/portfolio/life-23-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/23.JPG",
 				"alt": "life — 23",
@@ -885,7 +893,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-120",
+				"id": "g-119",
 				"src": "/images/portfolio/life-24-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/24.JPG",
 				"alt": "life — 24",
@@ -895,7 +903,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-121",
+				"id": "g-120",
 				"src": "/images/portfolio/life-25-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/25.JPG",
 				"alt": "life — 25",
@@ -905,7 +913,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-122",
+				"id": "g-121",
 				"src": "/images/portfolio/life-26-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/26.JPG",
 				"alt": "life — 26",
@@ -915,7 +923,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-123",
+				"id": "g-122",
 				"src": "/images/portfolio/life-27-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/27.JPG",
 				"alt": "life — 27",
@@ -925,7 +933,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-124",
+				"id": "g-123",
 				"src": "/images/portfolio/life-28-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/28.JPG",
 				"alt": "life — 28",
@@ -935,7 +943,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-125",
+				"id": "g-124",
 				"src": "/images/portfolio/life-29-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/29.JPG",
 				"alt": "life — 29",
@@ -945,7 +953,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-126",
+				"id": "g-125",
 				"src": "/images/portfolio/life-30-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/30.JPG",
 				"alt": "life — 30",
@@ -955,7 +963,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-127",
+				"id": "g-126",
 				"src": "/images/portfolio/life-31-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/31.JPG",
 				"alt": "life — 31",
@@ -965,7 +973,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-128",
+				"id": "g-127",
 				"src": "/images/portfolio/life-32-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/32.JPG",
 				"alt": "life — 32",
@@ -975,7 +983,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-129",
+				"id": "g-128",
 				"src": "/images/portfolio/life-33-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/33.JPG",
 				"alt": "life — 33",
@@ -985,7 +993,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-130",
+				"id": "g-129",
 				"src": "/images/portfolio/life-35-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/2-LIFE/35.JPG",
 				"alt": "life — 35",
@@ -995,7 +1003,7 @@
 				"category": "life"
 			},
 			{
-				"id": "g-131",
+				"id": "g-130",
 				"src": "/images/portfolio/self-portrait-1-bu-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/3-SELF%20PORTRAIT/1-BU.jpg",
 				"alt": "self portrait — 1-BU",
@@ -1006,7 +1014,7 @@
 				"category": "self portrait"
 			},
 			{
-				"id": "g-132",
+				"id": "g-131",
 				"src": "/images/portfolio/self-portrait-2-cok-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/3-SELF%20PORTRAIT/2-COK.JPG",
 				"alt": "self portrait — 2-COK",
@@ -1017,7 +1025,7 @@
 				"category": "self portrait"
 			},
 			{
-				"id": "g-133",
+				"id": "g-132",
 				"src": "/images/portfolio/self-portrait-3-datli-jpeg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/3-SELF%20PORTRAIT/3-DATLI.JPEG",
 				"alt": "self portrait — 3-DATLI",
@@ -1028,7 +1036,7 @@
 				"category": "self portrait"
 			},
 			{
-				"id": "g-134",
+				"id": "g-133",
 				"src": "/images/portfolio/self-portrait-4-bir-jpg.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/3-SELF%20PORTRAIT/4-BIR.JPG",
 				"alt": "self portrait — 4-BIR",
@@ -1039,7 +1047,7 @@
 				"category": "self portrait"
 			},
 			{
-				"id": "g-135",
+				"id": "g-134",
 				"src": "/images/portfolio/self-portrait-5-yavruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu.jpg",
 				"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/3-SELF%20PORTRAIT/5-YAVRUUuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu.JPG",
 				"alt": "self portrait — 5-YAVRUUuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
@@ -1087,13 +1095,12 @@
 					},
 					{
 						"id": "g-4",
-						"src": "/images/portfolio/couples-0-s-f-4-fatih-hojam-test-jpg.jpg",
-						"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/0-COUPLES/0-S%20%26%20F/4-Fatih%20hojam%20test.JPG",
-						"alt": "S & F — 4-Fatih hojam test",
+						"src": "/images/portfolio/couples-0-s-f-4-jpg.jpg",
+						"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/0-COUPLES/0-S%20%26%20F/4.JPG",
+						"alt": "S & F — 4",
 						"width": 1067,
 						"height": 1600,
 						"kind": "image",
-						"caption": "Fatih hojam test",
 						"category": "couples"
 					},
 					{
@@ -1175,13 +1182,12 @@
 						"kind": "image"
 					},
 					{
-						"src": "/images/portfolio/sliders/couples-0-s-f/couples-0-s-f-slider-8-test-name-hi-jpg.jpg",
-						"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/0-COUPLES/0-S%20%26%20F/SLIDER/8-Test%20name%20hi.JPG",
-						"alt": "S & F — slider — 8-Test name hi",
+						"src": "/images/portfolio/sliders/couples-0-s-f/couples-0-s-f-slider-8-jpg.jpg",
+						"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/0-COUPLES/0-S%20%26%20F/SLIDER/8.JPG",
+						"alt": "S & F — slider — 8",
 						"width": 1333,
 						"height": 2000,
-						"kind": "image",
-						"caption": "Test name hi"
+						"kind": "image"
 					},
 					{
 						"src": "/images/portfolio/sliders/couples-0-s-f/couples-0-s-f-slider-9-jpg.jpg",
@@ -1650,7 +1656,7 @@
 						"src": "/images/portfolio/couples-4-g-i-5-jpg.jpg",
 						"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/0-COUPLES/4-G%20%26%20I/5.jpg",
 						"alt": "G & I — 5",
-						"width": 1066,
+						"width": 1131,
 						"height": 1600,
 						"kind": "image",
 						"category": "couples"
@@ -1660,7 +1666,7 @@
 						"src": "/images/portfolio/couples-4-g-i-6-jpg.jpg",
 						"fullSrc": "https://store.kozturk.com/public.php/dav/files/ffYXDyjq2z4Ycxw/1-PORTFOLIO/0-COUPLES/4-G%20%26%20I/6.jpg",
 						"alt": "G & I — 6",
-						"width": 1131,
+						"width": 1066,
 						"height": 1600,
 						"kind": "image",
 						"category": "couples"
